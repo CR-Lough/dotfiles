@@ -12,12 +12,12 @@ function M.get()
     ---@class PluginLspKeys
     M._keys = {
       -- stylua: ignore start
-      {
-        "<leader>cd",
-        vim.diagnostic.open_float,
-        desc =
-        "Line Diagnostics"
-      },
+      -- {
+      --   "<leader>cd",
+      --   vim.diagnostic.open_float,
+      --   desc =
+      --   "Line Diagnostics"
+      -- },
       {
         "<leader>cl",
         "<cmd>LspInfo<cr>",
@@ -38,12 +38,12 @@ function M.get()
         desc =
         "References"
       },
-      {
-        "gD",
-        vim.lsp.buf.declaration,
-        desc =
-        "Goto Declaration"
-      },
+      -- {
+      --   "gD",
+      --   vim.lsp.buf.declaration,
+      --   desc =
+      --   "Goto Declaration"
+      -- },
       {
         "gI",
         function() require("telescope.builtin").lsp_implementations({ reuse_win = true }) end,
@@ -62,14 +62,14 @@ function M.get()
         desc =
         "Hover"
       },
-      {
-        "gK",
-        vim.lsp.buf.signature_help,
-        desc =
-        "Signature Help",
-        has =
-        "signatureHelp"
-      },
+      -- {
+      --   "gK",
+      --   vim.lsp.buf.signature_help,
+      --   desc =
+      --   "Signature Help",
+      --   has =
+      --   "signatureHelp"
+      -- },
       {
         "<c-k>",
         vim.lsp.buf.signature_help,
@@ -133,31 +133,31 @@ function M.get()
         has =
         "rangeFormatting"
       },
-      {
-        "<leader>ca",
-        vim.lsp.buf.code_action,
-        desc =
-        "Code Action",
-        mode = {
-          "n", "v" },
-        has =
-        "codeAction"
-      },
-      {
-        "<leader>cA",
-        function()
-          vim.lsp.buf.code_action({
-            context = {
-              only = {
-                "source",
-              },
-              diagnostics = {},
-            },
-          })
-        end,
-        desc = "Source Action",
-        has = "codeAction",
-      }
+      -- {
+      --   "<leader>ca",
+      --   vim.lsp.buf.code_action,
+      --   desc =
+      --   "Code Action",
+      --   mode = {
+      --     "n", "v" },
+      --   has =
+      --   "codeAction"
+      -- },
+      -- {
+      --   "<leader>cA",
+      --   function()
+      --     vim.lsp.buf.code_action({
+      --       context = {
+      --         only = {
+      --           "source",
+      --         },
+      --         diagnostics = {},
+      --       },
+      --     })
+      --   end,
+      --   desc = "Source Action",
+      --   has = "codeAction",
+      -- }
       -- stylelua: ignore end
     }
     if require("util").has("inc-rename.nvim") then
@@ -228,7 +228,9 @@ function M.on_attach(client, buffer)
       opts.has = nil
       opts.silent = opts.silent ~= false
       opts.buffer = buffer
-      vim.keymap.set(keys.mode or "n", keys[1], keys[2], opts)
+      if keys[1] ~= nil and keys[2] ~= nil then
+        vim.keymap.set(keys.mode or "n", keys[1], keys[2], opts)
+      end
     end
   end
 end
