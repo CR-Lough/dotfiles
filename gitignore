@@ -1,0 +1,39 @@
+# Compiled source
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# OS generated files 
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ethumbs.db
+Thumbs.db
+Desktop.ini
+.DocumentRevisions-V100
+.fseventsd
+.TemporaryItems
+.VolumeIcon.icns
+
+# Environment files
+.env
+.envrc
+.direnv
+/**/.env
+/**/.envrc
+/**/.direnv/
+
+# Python
+*.py[co]
+.venv/
+
+# Nix
+.devenv
+/**/.devenv
+

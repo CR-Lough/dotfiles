@@ -1,0 +1,50 @@
+[user]
+  name = connor-lough
+  email = crlough@pm.me
+
+[github]
+  user = connor-lough
+
+[init]
+  defaultBranch = main
+
+[push]
+  default = current
+
+[pull]
+  rebase = true
+
+[branch]
+  autosetuprebase = always
+
+[status]
+  color = true
+  submodulesummary = true
+  showUntrackedFiles = all
+
+[core]
+  editor = nvim
+  excludesFile = ~/.gitignore
+
+[alias]
+  llog = log --oneline --decorate --graph
+  st = status
+  a = add .
+  aa = add --all
+  d = diff
+
+[color]
+  ui = auto
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "diff"]
+  indentHeuristic = true
+  algorithm = histogram
+  meta = yellow bold
+  frag = magenta bold
+  new = green bold
+
